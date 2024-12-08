@@ -1,0 +1,331 @@
+Started by user admin
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/MavePro4
+The recommended git tool is: NONE
+No credentials specified
+Cloning the remote Git repository
+Cloning repository https://github.com/suhailhameed/maven-samples.git/
+ > git init /var/lib/jenkins/workspace/MavePro4 # timeout=10
+Fetching upstream changes from https://github.com/suhailhameed/maven-samples.git/
+ > git --version # timeout=10
+ > git --version # 'git version 2.43.0'
+ > git fetch --tags --force --progress -- https://github.com/suhailhameed/maven-samples.git/ +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/suhailhameed/maven-samples.git/ # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision fccf36453cf8cce9f06c1de20e8380dd7a5e5bfc (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f fccf36453cf8cce9f06c1de20e8380dd7a5e5bfc # timeout=10
+Commit message: "Update pom.xml"
+First time build. Skipping changelog.
+[MavePro4] $ /var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/my_maven/bin/mvn compile
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.example.maven-samples:server:jar:1.0-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter.
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.example.maven-samples:webapp:war:1.0-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter.
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.example.maven-samples:multi-module-parent:pom:1.0-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 51, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.example.maven-samples:single-module-project:jar:1.0-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 53, column 24
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[WARNING] The project com.example.maven-samples:multi-module-parent:pom:1.0-SNAPSHOT uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
+[WARNING] The project com.example.maven-samples:single-module-project:jar:1.0-SNAPSHOT uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
+[WARNING] The project com.example.maven-samples:parent:pom:1.0-SNAPSHOT uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Multi Module Project Parent                                        [pom]
+[INFO] Server                                                             [jar]
+[INFO] Webapp                                                             [war]
+[INFO] A Single Maven Module                                              [jar]
+[INFO] Parent                                                             [pom]
+[INFO] 
+[INFO] -----------< com.example.maven-samples:multi-module-parent >------------
+[INFO] Building Multi Module Project Parent 1.0-SNAPSHOT                  [1/5]
+[INFO]   from multi-module/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] ------------------< com.example.maven-samples:server >------------------
+[INFO] Building Server 1.0-SNAPSHOT                                       [2/5]
+[INFO]   from multi-module/server/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:2.5:resources (default-resources) @ server ---
+[debug] execute contextualize
+[INFO] Using 'utf-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/MavePro4/multi-module/server/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ server ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /var/lib/jenkins/workspace/MavePro4/multi-module/server/target/classes
+[INFO] 
+[INFO] ------------------< com.example.maven-samples:webapp >------------------
+[INFO] Building Webapp 1.0-SNAPSHOT                                       [3/5]
+[INFO]   from multi-module/webapp/pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- resources:2.5:resources (default-resources) @ webapp ---
+[debug] execute contextualize
+[INFO] Using 'utf-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/MavePro4/multi-module/webapp/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ webapp ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] ----------< com.example.maven-samples:single-module-project >-----------
+[INFO] Building A Single Maven Module 1.0-SNAPSHOT                        [4/5]
+[INFO]   from single-module/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:2.5:resources (default-resources) @ single-module-project ---
+[debug] execute contextualize
+[INFO] Using 'utf-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/MavePro4/single-module/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ single-module-project ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /var/lib/jenkins/workspace/MavePro4/single-module/target/classes
+[INFO] 
+[INFO] ------------------< com.example.maven-samples:parent >------------------
+[INFO] Building Parent 1.0-SNAPSHOT                                       [5/5]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Parent 1.0-SNAPSHOT:
+[INFO] 
+[INFO] Multi Module Project Parent ........................ SUCCESS [  0.006 s]
+[INFO] Server ............................................. SUCCESS [  2.997 s]
+[INFO] Webapp ............................................. SUCCESS [  0.058 s]
+[INFO] A Single Maven Module .............................. SUCCESS [  0.141 s]
+[INFO] Parent ............................................. SUCCESS [  0.005 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.563 s
+[INFO] Finished at: 2024-11-09T16:38:00Z
+[INFO] ------------------------------------------------------------------------
+Parsing POMs
+Discovered a new module com.example.maven-samples:parent Parent
+Discovered a new module com.example.maven-samples:multi-module-parent Multi Module Project Parent
+Discovered a new module com.example.maven-samples:server Server
+Discovered a new module com.example.maven-samples:webapp Webapp
+Discovered a new module com.example.maven-samples:single-module-project A Single Maven Module
+Modules changed, recalculating dependency graph
+Established TCP socket on 44443
+[MavePro4] $ java -cp /var/lib/jenkins/plugins/maven-plugin/WEB-INF/lib/maven35-agent-1.14.jar:/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/my_maven/boot/plexus-classworlds-2.8.0.jar:/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/my_maven/conf/logging jenkins.maven3.agent.Maven35Main /var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/my_maven /var/cache/jenkins/war/WEB-INF/lib/remoting-3261.v9c670a_4748a_9.jar /var/lib/jenkins/plugins/maven-plugin/WEB-INF/lib/maven35-interceptor-1.14.jar /var/lib/jenkins/plugins/maven-plugin/WEB-INF/lib/maven3-interceptor-commons-1.14.jar 44443
+<===[JENKINS REMOTING CAPACITY]===>   channel started
+Executing Maven:  -B -f /var/lib/jenkins/workspace/MavePro4/pom.xml install
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.example.maven-samples:server:jar:1.0-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter.
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.example.maven-samples:webapp:war:1.0-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter.
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.example.maven-samples:multi-module-parent:pom:1.0-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 51, column 24
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.example.maven-samples:single-module-project:jar:1.0-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 53, column 24
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[WARNING] The project com.example.maven-samples:multi-module-parent:pom:1.0-SNAPSHOT uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
+[WARNING] The project com.example.maven-samples:single-module-project:jar:1.0-SNAPSHOT uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
+[WARNING] The project com.example.maven-samples:parent:pom:1.0-SNAPSHOT uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Multi Module Project Parent                                        [pom]
+[INFO] Server                                                             [jar]
+[INFO] Webapp                                                             [war]
+[INFO] A Single Maven Module                                              [jar]
+[INFO] Parent                                                             [pom]
+[INFO] 
+[INFO] -----------< com.example.maven-samples:multi-module-parent >------------
+[INFO] Building Multi Module Project Parent 1.0-SNAPSHOT                  [1/5]
+[INFO]   from multi-module/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- install:3.1.2:install (default-install) @ multi-module-parent ---
+[INFO] Installing /var/lib/jenkins/workspace/MavePro4/multi-module/pom.xml to /var/lib/jenkins/.m2/repository/com/example/maven-samples/multi-module-parent/1.0-SNAPSHOT/multi-module-parent-1.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------< com.example.maven-samples:server >------------------
+[INFO] Building Server 1.0-SNAPSHOT                                       [2/5]
+[INFO]   from multi-module/server/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:2.5:resources (default-resources) @ server ---
+[debug] execute contextualize
+[INFO] Using 'utf-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/MavePro4/multi-module/server/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ server ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:2.5:testResources (default-testResources) @ server ---
+[debug] execute contextualize
+[INFO] Using 'utf-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/MavePro4/multi-module/server/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ server ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /var/lib/jenkins/workspace/MavePro4/multi-module/server/target/test-classes
+[INFO] 
+[INFO] --- surefire:2.11:test (default-test) @ server ---
+[INFO] Surefire report directory: /var/lib/jenkins/workspace/MavePro4/multi-module/server/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.example.TestGreeter
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.137 sec
+
+Results :
+
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+
+[JENKINS] Recording test results
+[INFO] 
+[INFO] --- jar:3.4.1:jar (default-jar) @ server ---
+[INFO] Building jar: /var/lib/jenkins/workspace/MavePro4/multi-module/server/target/server.jar
+[INFO] 
+[INFO] --- install:3.1.2:install (default-install) @ server ---
+[INFO] Installing /var/lib/jenkins/workspace/MavePro4/multi-module/server/pom.xml to /var/lib/jenkins/.m2/repository/com/example/maven-samples/server/1.0-SNAPSHOT/server-1.0-SNAPSHOT.pom
+[INFO] Installing /var/lib/jenkins/workspace/MavePro4/multi-module/server/target/server.jar to /var/lib/jenkins/.m2/repository/com/example/maven-samples/server/1.0-SNAPSHOT/server-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------< com.example.maven-samples:webapp >------------------
+[INFO] Building Webapp 1.0-SNAPSHOT                                       [3/5]
+[INFO]   from multi-module/webapp/pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- resources:2.5:resources (default-resources) @ webapp ---
+[debug] execute contextualize
+[INFO] Using 'utf-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/MavePro4/multi-module/webapp/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ webapp ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- resources:2.5:testResources (default-testResources) @ webapp ---
+[debug] execute contextualize
+[INFO] Using 'utf-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/MavePro4/multi-module/webapp/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ webapp ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:2.11:test (default-test) @ webapp ---
+[INFO] No tests to run.
+[INFO] Surefire report directory: /var/lib/jenkins/workspace/MavePro4/multi-module/webapp/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[JENKINS] Recording test results
+[INFO] 
+[INFO] --- war:3.4.0:war (default-war) @ webapp ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [webapp] in [/var/lib/jenkins/workspace/MavePro4/multi-module/webapp/target/webapp]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/var/lib/jenkins/workspace/MavePro4/multi-module/webapp/src/main/webapp]
+[INFO] Building war: /var/lib/jenkins/workspace/MavePro4/multi-module/webapp/target/webapp.war
+[INFO] 
+[INFO] --- install:3.1.2:install (default-install) @ webapp ---
+[INFO] Installing /var/lib/jenkins/workspace/MavePro4/multi-module/webapp/pom.xml to /var/lib/jenkins/.m2/repository/com/example/maven-samples/webapp/1.0-SNAPSHOT/webapp-1.0-SNAPSHOT.pom
+[INFO] Installing /var/lib/jenkins/workspace/MavePro4/multi-module/webapp/target/webapp.war to /var/lib/jenkins/.m2/repository/com/example/maven-samples/webapp/1.0-SNAPSHOT/webapp-1.0-SNAPSHOT.war
+[INFO] 
+[INFO] ----------< com.example.maven-samples:single-module-project >-----------
+[INFO] Building A Single Maven Module 1.0-SNAPSHOT                        [4/5]
+[INFO]   from single-module/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:2.5:resources (default-resources) @ single-module-project ---
+[debug] execute contextualize
+[INFO] Using 'utf-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/MavePro4/single-module/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ single-module-project ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:2.5:testResources (default-testResources) @ single-module-project ---
+[debug] execute contextualize
+[INFO] Using 'utf-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/MavePro4/single-module/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ single-module-project ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /var/lib/jenkins/workspace/MavePro4/single-module/target/test-classes
+[INFO] 
+[INFO] --- surefire:2.11:test (default-test) @ single-module-project ---
+[INFO] Surefire report directory: /var/lib/jenkins/workspace/MavePro4/single-module/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.example.TestGreeter
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.112 sec
+
+Results :
+
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+
+[JENKINS] Recording test results
+[INFO] 
+[INFO] --- jar:3.4.1:jar (default-jar) @ single-module-project ---
+[INFO] Building jar: /var/lib/jenkins/workspace/MavePro4/single-module/target/single-module-project.jar
+[INFO] 
+[INFO] --- install:3.1.2:install (default-install) @ single-module-project ---
+[INFO] Installing /var/lib/jenkins/workspace/MavePro4/single-module/pom.xml to /var/lib/jenkins/.m2/repository/com/example/maven-samples/single-module-project/1.0-SNAPSHOT/single-module-project-1.0-SNAPSHOT.pom
+[INFO] Installing /var/lib/jenkins/workspace/MavePro4/single-module/target/single-module-project.jar to /var/lib/jenkins/.m2/repository/com/example/maven-samples/single-module-project/1.0-SNAPSHOT/single-module-project-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------< com.example.maven-samples:parent >------------------
+[INFO] Building Parent 1.0-SNAPSHOT                                       [5/5]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- install:3.1.2:install (default-install) @ parent ---
+[INFO] Installing /var/lib/jenkins/workspace/MavePro4/pom.xml to /var/lib/jenkins/.m2/repository/com/example/maven-samples/parent/1.0-SNAPSHOT/parent-1.0-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Parent 1.0-SNAPSHOT:
+[INFO] 
+[INFO] Multi Module Project Parent ........................ SUCCESS [  1.207 s]
+[INFO] Server ............................................. SUCCESS [  7.773 s]
+[INFO] Webapp ............................................. SUCCESS [  2.070 s]
+[INFO] A Single Maven Module .............................. SUCCESS [  1.587 s]
+[INFO] Parent ............................................. SUCCESS [  0.102 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  16.441 s
+[INFO] Finished at: 2024-11-09T16:38:26Z
+[INFO] ------------------------------------------------------------------------
+Waiting for Jenkins to finish collecting data
+[JENKINS] Archiving /var/lib/jenkins/workspace/MavePro4/single-module/pom.xml to com.example.maven-samples/single-module-project/1.0-SNAPSHOT/single-module-project-1.0-SNAPSHOT.pom
+[JENKINS] Archiving /var/lib/jenkins/workspace/MavePro4/single-module/target/single-module-project.jar to com.example.maven-samples/single-module-project/1.0-SNAPSHOT/single-module-project-1.0-SNAPSHOT.jar
+[JENKINS] Archiving /var/lib/jenkins/workspace/MavePro4/multi-module/pom.xml to com.example.maven-samples/multi-module-parent/1.0-SNAPSHOT/multi-module-parent-1.0-SNAPSHOT.pom
+[JENKINS] Archiving /var/lib/jenkins/workspace/MavePro4/pom.xml to com.example.maven-samples/parent/1.0-SNAPSHOT/parent-1.0-SNAPSHOT.pom
+[JENKINS] Archiving /var/lib/jenkins/workspace/MavePro4/multi-module/webapp/pom.xml to com.example.maven-samples/webapp/1.0-SNAPSHOT/webapp-1.0-SNAPSHOT.pom
+[JENKINS] Archiving /var/lib/jenkins/workspace/MavePro4/multi-module/webapp/target/webapp.war to com.example.maven-samples/webapp/1.0-SNAPSHOT/webapp-1.0-SNAPSHOT.war
+[JENKINS] Archiving /var/lib/jenkins/workspace/MavePro4/multi-module/server/pom.xml to com.example.maven-samples/server/1.0-SNAPSHOT/server-1.0-SNAPSHOT.pom
+[JENKINS] Archiving /var/lib/jenkins/workspace/MavePro4/multi-module/server/target/server.jar to com.example.maven-samples/server/1.0-SNAPSHOT/server-1.0-SNAPSHOT.jar
+channel stopped
+Finished: SUCCESS
